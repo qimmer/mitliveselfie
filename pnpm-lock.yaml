@@ -107,6 +107,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@4.1.11)
+      tmp-promise:
+        specifier: ^3.0.3
+        version: 3.0.3
       ts-pattern:
         specifier: ^5.7.1
         version: 5.8.0
