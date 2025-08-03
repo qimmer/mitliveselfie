@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "@fontsource/inter/100.css";
+@import "@fontsource/inter/200.css";
+@import "@fontsource/inter/300.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/800.css";
+@import "@fontsource/inter/900.css";
+
+@plugin "@tailwindcss/typography";
+
+@config "../tailwind.config.cjs";
+
+@theme {
+  --default-ring-width: 1px;
+  --default-ring-color: hsl(var(--accent));
+
+  --shadow-glow: 0 0 5px hsl(var(--accent));
+}
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  max-width: 1024px;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: hsl(var(--border));
+  }
+
+  #portals {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100dvw;
+    height: 100dvh;
+    max-width: 100dvw;
+    max-height: 100dvh;
+    pointer-events: none;
+    touch-action: none;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  #portals > * {
+    pointer-events: all;
+    touch-action: auto;
+    user-select: auto;
+  }
+
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 222.2 47.4% 99%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 125, 63%, 31%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  [data-kb-theme="dark"] {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 125, 63%, 31%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  #app {
+    @apply min-h-full size-full basis-full flex flex-col min-w-screen w-screen max-w-screen;
+  }
+
+  html {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply h-full flex flex-col items-stretch basis-full;
+    @apply w-full max-w-full overflow-x-hidden;
+    overflow: overlay;
+  }
+
+  body {
+    @apply h-full flex flex-col items-stretch basis-full;
+    @apply overflow-x-hidden;
+    @apply font-sans;
+  }
+}
+
+@font-face {
+  font-family: "tabler-icons";
+  font-style: normal;
+  font-weight: 200;
+  text-rendering: optimizeSpeed;
+  src:
+    url("../node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff2")
+    format("woff2"),
+    url("../node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.woff?")
+    format("woff"),
+    url("../node_modules/@tabler/icons-webfont/dist/fonts/tabler-icons.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Skilteskrift";
+  font-style: normal;
+  font-weight: 200;
+  text-rendering: optimizeSpeed;
+  src:
+    url("/byskilt.woff")
+    format("woff"),
+}
