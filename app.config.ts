@@ -1,6 +1,5 @@
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import mdx from "@mdx-js/rollup";
 import { defineConfig } from "@solidjs/start/config";
 import tailwindcss from "@tailwindcss/vite";
 import remarkGfm from "remark-gfm";
@@ -16,7 +15,6 @@ export default defineConfig({
     plugins: [
       tailwindcss(),
       tsconfigPaths(),
-      mdx({ jsxImportSource: "solid-jsx", remarkPlugins: [remarkGfm] }),
     ],
     resolve: {
       alias: {
