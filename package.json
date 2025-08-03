@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start",
+    "start": "dotenv run node .output/server/index.mjs",
     "fix": "biome check . --write --unsafe",
     "check": "tsc -p ./tsconfig.json --noEmit -w",
     "lint:circular-deps": "madge --circular --extensions ts,tsx ./src",
